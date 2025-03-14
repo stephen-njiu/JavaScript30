@@ -48,11 +48,11 @@
                 
         }
 
-        .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
+        .panel1 { background-image:url(https://cdn.pixabay.com/photo/2024/08/23/15/49/ai-generated-8992200_1280.jpg); }
+    .panel2 { background-image:url(https://cdn.pixabay.com/photo/2024/08/23/15/49/ai-generated-8992201_1280.jpg); }
     .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-    .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
+    .panel4 { background-image:url(https://cdn.pixabay.com/photo/2024/08/23/15/49/ai-generated-8992202_1280.jpg); }
+    .panel5 { background-image:url(https://cdn.pixabay.com/photo/2024/08/23/15/49/ai-generated-8992203_1280.jpg); }
 
     /* Flex items */
 
@@ -77,6 +77,7 @@
         font-family: 'Amatic SC',cursive;
         text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
         font-size: 2em;
+        color:rgb(211, 9, 211);
     }
 
     .panel p:nth-child(2) {
@@ -139,17 +140,17 @@
 
     <script>
         
-        // const panels = document.querySelectorAll('.panel');
+        const panels = document.querySelectorAll('.panel');
 
-        // function toggleOpen() {
-        //     this.classList.toggle('open');
-        // }
+        function toggleOpen() {
+            this.classList.toggle('open');
+        }
 
-        // function toggleActive(e) {
-        //     if (e.propertyName.includes('flex')){
-        //         this.classList.toggle('open-active');
-        //     }
-        // }
+        function toggleActive(e) {
+            if (e.propertyName.includes('flex')){
+                this.classList.toggle('open-active');
+            }
+        }
 
         // function removeAll(e) {
         //     if (e.currentTarget.classList.contains('open')) {
@@ -159,37 +160,9 @@
 
         // panels.forEach(panel => panel.addEventListener('mouseleave', removeAll));
 
-        // panels.forEach(panel => panel.addEventListener('mouseenter',toggleOpen));
-        // panels.forEach(panel => panel.addEventListener('transitionend',toggleActive));
+        panels.forEach(panel => panel.addEventListener('click',toggleOpen));
+        panels.forEach(panel => panel.addEventListener('transitionend',toggleActive));
         
-
-        const panels = document.querySelectorAll('.panel');
-
-function toggleOpen() {
-    this.classList.toggle('open');
-}
-
-function toggleActive(e) {
-    if (e.propertyName.includes('flex')) {
-        this.classList.toggle('open-active');
-    }
-}
-
-function removeAll(e) {
-    panels.forEach(panel => {
-        // panel.style.transition = 'none'; // Disable transitions
-        panel.classList.remove('open', 'open-active'); // Instantly reset panels
-    });
-}
-
-//     setTimeout(() => {
-//         panels.forEach(panel => panel.style.transition = ''); // Restore transitions
-//     }, 10); // Small delay to ensure the reset happens without animation
-// }
-
-panels.forEach(panel => panel.addEventListener('mouseleave', removeAll));
-panels.forEach(panel => panel.addEventListener('mouseenter', toggleOpen));
-panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 
 
     </script>
